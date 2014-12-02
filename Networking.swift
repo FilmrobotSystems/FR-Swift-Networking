@@ -10,8 +10,8 @@ class Networking
     let customHeader = ##Value##
     let baseUri = ##Base URL Value##
     
-	// Set up request 
-	// Below has an example on how to add custom headers
+    // Set up request 
+    // Below has an example on how to add custom headers
     private func setRequest(url: String, parameters: NSDictionary?, uriMethod: String)->NSMutableURLRequest{
         var fullUrl = NSURL(string: baseUri + url)
         let cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData
@@ -35,8 +35,8 @@ class Networking
         return request
     }
     
-	// HTTP synchronous call 
-	// Wait for reply from request before moving on to another task.
+    // HTTP synchronous call 
+    // Wait for reply from request before moving on to another task.
     func callSync(url: String, parameters: NSDictionary?, uriMethod : String)->NSDictionary?{
         
         var request = self.setRequest(url, parameters: parameters, uriMethod: uriMethod)
@@ -59,7 +59,7 @@ class Networking
     }
     
     // HTTP asynchronous call 
-	// Will move on to next task before request is complete.
+    // Will move on to next task before request is complete.
     func callAsync(url: String, parameters: NSDictionary?, uriMethod: String, completion: ((NSDictionary!) -> Void)?){
         
         var request = self.setRequest(url, parameters: parameters, uriMethod: uriMethod)
@@ -69,14 +69,14 @@ class Networking
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: config)
         
-		// Send http request
+	// Send http request
         let task: NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
             if((error) != nil)
             {
                 println("Request error: \(error.localizedDescription)")
             }
             
-			// Deserialize json data
+	    // Deserialize json data
             var err: NSError? = nil
             var json = NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves, error: &err) as? NSDictionary
             
