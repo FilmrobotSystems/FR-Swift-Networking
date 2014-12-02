@@ -14,7 +14,7 @@ network.callSync("#uri#", parameters: searchParams, uriMethod: "GET/POST/PUT/DEL
 // For asynchronous call method
 network.callAsync("#uri#", parameters: searchParams, uriMethod: "GET/POST/PUT/DELETE", completion: self.dataResult)
 
-// Compleation method for asynchronous call
+// Completion  method for asynchronous call
 func dataResult(json:NSDictionary!)
 {
 	// Do what ever you need with the data here
