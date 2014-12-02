@@ -3,6 +3,7 @@ FR-Swift-Networking
 
 Simple networking class writen in swift
 
+````swift
 // Load Class
 var network = Networking()
 var data : Array<AnyObject> = []
@@ -22,3 +23,4 @@ func dataResult(json:NSDictionary!)
 		data += parseJson["DATA"] as Array
 	}
 }
+````
