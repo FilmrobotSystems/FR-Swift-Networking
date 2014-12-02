@@ -9,7 +9,7 @@ var network = Networking()
 var data : Array<AnyObject> = []
 
 // For synchronous call method
-network.callSync("#uri#", parameters: searchParams, uriMethod: "GET/POST/PUT/DELETE", completion: self.dataResult)
+network.callSync("#uri#", parameters: searchParams, uriMethod: "GET/POST/PUT/DELETE")
 
 // For asynchronous call method
 network.callAsync("#uri#", parameters: searchParams, uriMethod: "GET/POST/PUT/DELETE", completion: self.dataResult)
